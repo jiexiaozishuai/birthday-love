@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <title>Document</title>
+    <style type="text/css" media="screen">
+        #wrap{
+            width: 100%;
+            background-color: #3091b9;
+            position: relative;
+        }
+        .photo img{
+            display: block;
+            width: 100%;
+            height: 200px;
+        }
+        #container{
+            width: 100%;
+            height: 500px;
+            margin: 0 auto;
+            color: white;
+            font-size: 24px;
+            text-align: center;
+            background-image: url('images/girl.jpg');
+            background-size: 100% 500px;
+        }
+        a{
+            display: block;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.2);
+            font-size: 80px;
+            font-weight: 700;
+            text-align: center;
+            line-height: 80px;
+            color: white;
+            float: right;
+            text-decoration: none;
+            position: absolute;
+            top: 40%;
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="photo">
+            <img src="images/hands.jpg" alt="" />
+        </div>
+        <div id="container"></div>
+        <a href="2.html">></a>
+    </div>
+</body>
+<script>
+    var str = '浮生三千，吾爱有三：<br/>日月与卿。<br/>日为朝，月为暮，卿为朝朝暮暮！';
+    var i = 0;
+    function typing(){
+        var container = document.getElementById('container');
+        if (i <= str.length) {
+            container.innerHTML = str.slice(0, i++) + '_';
+            setTimeout('typing()', 200);//递归调用
+        }else{
+            container.innerHTML = str;//结束打字,移除 _ 光标
+        }
+    }
+    typing();
+</script>
+</html>
